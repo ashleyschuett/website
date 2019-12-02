@@ -37,8 +37,6 @@ with existing built-in objects, deleting a namespace deletes all custom objects
 in that namespace. CustomResourceDefinitions themselves are non-namespaced and
 are available to all namespaces.
 
-For example, if you save the following CustomResourceDefinition to `resourcedefinition.yaml`:
-
 {{< tabs name="CustomResourceDefinition_example_1" >}}
 {{% tab name="apiextensions.k8s.io/v1" %}}
 ```yaml
@@ -933,14 +931,14 @@ spec:
     - name: Spec
       type: string
       description: The cron spec defining the interval a CronJob is run
-      jsonPath: .spec.cronSpec
+      JSONPath: .spec.cronSpec
     - name: Replicas
       type: integer
       description: The number of jobs launched by the CronJob
-      jsonPath: .spec.replicas
+      JSONPath: .spec.replicas
     - name: Age
       type: date
-      jsonPath: .metadata.creationTimestamp
+      JSONPath: .metadata.creationTimestamp
 ```
       {{% /tab %}}
       {{% tab name="apiextensions.k8s.io/v1beta1" %}}
